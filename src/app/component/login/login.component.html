@@ -1,0 +1,25 @@
+<h1 class="text-center">
+  Login</h1>
+<div class="container">
+  <form #loginFrm="ngForm" (ngSubmit)="doLogin()" [formGroup]="loginFrom">
+    <div class="form-group">
+      <label for="">User name</label>
+      <input type="text" name="username" class="form-control" required formControlName="username" />
+    </div>
+    <div *ngIf="loginFrm.submitted && loginFrom.controls.username.errors" class="alert alert-danger">
+      <p *ngIf="loginFrom.controls.username.errors.required">Required</p>
+      <p *ngIf="loginFrom.controls.username.errors.email">Invalid Input</p>
+    </div>
+    <div class="form-group">
+      <label for="">Password</label>
+      <input type="password" name="password" class="form-control" required formControlName="password" minlength="6" />
+    </div>
+    <div *ngIf="loginFrm.submitted && loginFrom.controls.password.errors" class="alert alert-danger">
+      <p *ngIf="loginFrom.controls.password.errors.required">Required</p>
+      <p *ngIf="loginFrom.controls.password.errors.minlength">min 6 charcter </p>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary" type="submit">Login</button>
+    </div>
+  </form>
+</div>
