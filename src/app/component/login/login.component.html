@@ -1,7 +1,7 @@
 <h1 class="text-center">
   Login</h1>
 <div class="container">
-  <form #loginFrm="ngForm" (ngSubmit)="doLogin()" [formGroup]="loginFrom">
+  <form #loginFrm="ngForm" (ngSubmit)="doLogin(loginFrm)" [formGroup]="loginFrom">
     <div class="form-group">
       <label for="">User name</label>
       <input type="text" name="username" class="form-control" required formControlName="username" />
