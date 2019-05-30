@@ -11,6 +11,11 @@ const routes: Routes = [
   },
   {
     path:"login",component:LoginComponent
+  },
+  {
+    path:"user",
+    component:HomeComponent,
+    loadChildren:"./component/user/user.module#UserModule"
   }
 ];
 
